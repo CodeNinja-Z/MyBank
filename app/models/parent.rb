@@ -3,4 +3,9 @@ class Parent < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+	has_many :children
+	has_many :children, through: :account
+	has_many :transactions, through: :account
+
 end
