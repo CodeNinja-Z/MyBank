@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102225023) do
+ActiveRecord::Schema.define(version: 20151102230945) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal  "total_amount"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20151102225023) do
   create_table "requests", force: :cascade do |t|
     t.string   "name"
     t.string   "type"
-    t.float    "amount"
+    t.decimal  "amount"
     t.text     "description"
     t.datetime "date"
     t.integer  "account_id"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20151102225023) do
   create_table "transactions", force: :cascade do |t|
     t.string   "name"
     t.string   "type"
-    t.float    "amount"
+    t.decimal  "amount"
     t.datetime "date"
     t.integer  "account_id"
     t.integer  "parent_id"
