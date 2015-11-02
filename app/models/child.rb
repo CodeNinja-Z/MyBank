@@ -7,4 +7,5 @@ class Child < ActiveRecord::Base
 	belongs_to :parent
 	has_one :account 
 	has_many :requests
+	has_many :tasks
 end
