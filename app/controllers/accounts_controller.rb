@@ -1,5 +1,7 @@
 class AccountsController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def create
 		@account = Account.new(account_params)
 	end 

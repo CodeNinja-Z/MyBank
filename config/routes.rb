@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :children
-  devise_for :parents
+
+  devise_for :users
 
   resources :accounts, only: [:create, :index, :show, :destroy] do 
     resources :requests, only: [:create, :index, :show, :destroy]
