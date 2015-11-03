@@ -5,12 +5,16 @@ class AccountsController < ApplicationController
 	end 
 
 	def index
+		@accounts = Account.all
 	end 
 
 	def show
+		@account = Account.find(params[:id])
 	end 
 
-	def add_child
+	def destroy 
+		@account = Account.find(params[:id])
+		@account.destroy
 	end 
 
 	private
