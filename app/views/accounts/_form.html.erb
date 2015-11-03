@@ -1,0 +1,24 @@
+<%= form_for(@account) do |f| %>
+
+<div class="field">
+	<%= f.label :total_amount %>
+	<%= f.number_area :total_amount %>
+</div>
+
+<h1> Add Child </h1>
+
+<div id="children">
+	<%= f.fields_for :children do |child| %>
+	<%= render 'child_fields', f: child %>
+</div>
+	<% end %>
+
+<div class="links">
+	<%= link_to_add_association 'Add child', f, :children %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>

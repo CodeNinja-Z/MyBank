@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102230945) do
+ActiveRecord::Schema.define(version: 20151103175811) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal  "total_amount"
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 20151102230945) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birthdate"
   end
 
   add_index "children", ["email"], name: "index_children_on_email", unique: true
@@ -52,6 +55,8 @@ ActiveRecord::Schema.define(version: 20151102230945) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "parents", ["email"], name: "index_parents_on_email", unique: true
