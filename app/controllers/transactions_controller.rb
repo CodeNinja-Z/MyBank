@@ -5,6 +5,7 @@ class TransactionsController < ApplicationController
 	end 
 
 	def index
+		@transactions = Transaction.all
 	end 
 
 	private 

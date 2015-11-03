@@ -5,12 +5,14 @@ class TasksController < ApplicationController
 	end 
 
 	def index
+		@tasks = Task.all
 	end 
 
 	def update
 	end 
 
 	def show 
+		@task = Task.find(params[:id])
 	end 
 
 
