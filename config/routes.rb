@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :children
+  resources :parents
   devise_for :users
 
   resources :accounts, only: [:create, :index, :show, :destroy] do 

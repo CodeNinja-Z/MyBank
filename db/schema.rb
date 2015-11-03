@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103205946) do
+ActiveRecord::Schema.define(version: 20151103213702) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal  "total_amount"
@@ -22,11 +22,15 @@ ActiveRecord::Schema.define(version: 20151103205946) do
   end
 
   create_table "children", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "parents", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,6 +78,8 @@ ActiveRecord::Schema.define(version: 20151103205946) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "profile_id"
+    t.string   "profile_type"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
@@ -81,6 +87,7 @@ ActiveRecord::Schema.define(version: 20151103205946) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["profile_id"], name: "index_users_on_profile_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
